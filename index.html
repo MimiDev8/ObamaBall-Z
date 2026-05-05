@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="ruffle.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            background: black;
+        }
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+
+            document.getElementById("container").appendChild(player);
+
+            player.load("jogo.swf"); // CONFERE o nome aqui
+        });
+    </script>
+</body>
+</html>
